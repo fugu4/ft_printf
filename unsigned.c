@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   unsigned.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hnogi <hnogi@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 16:00:15 by hnogi             #+#    #+#             */
-/*   Updated: 2025/05/24 22:12:33 by hnogi            ###   ########.fr       */
+/*   Created: 2025/05/24 21:49:50 by hnogi             #+#    #+#             */
+/*   Updated: 2025/05/24 21:50:51 by hnogi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINT_F
-# define FT_PRINT_F
+#include "ft_printf.h"
 
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
-
-int ft_printf(const char *format, ...);
-int ft_putchar(char c);
-int ft_print_hex(unsigned int num, const char format)
-#endif
+static int ft_unsigned_len(unsigned int num)
+{
+    int len;
+    
+    len = 0;
+    
+}

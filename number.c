@@ -1,63 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hex.c                                              :+:      :+:    :+:   */
+/*   number.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hnogi <hnogi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 16:40:04 by hnogi             #+#    #+#             */
-/*   Updated: 2025/05/25 21:39:25 by hnogi            ###   ########.fr       */
+/*   Created: 2025/05/25 20:38:30 by hnogi             #+#    #+#             */
+/*   Updated: 2025/05/25 21:09:30 by hnogi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*strtoupper(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'f')
-			str[i] -= 32;
-		i++;
-	}
-	return (str);
-}
-
-int	print_hex(unsigned int num, const char format)
+int	print_decimal(int n)
 {
 	char	*str;
 	int		len;
 
-	str = utoa_base((unsigned long long)num, 16);
+	str = itoa_base((long long)n, 10);
 	if (!str)
 		return (0);
-	if (format == 'X')
-		str = strtoupper(str);
-	len = write(1, str, ft_strlen(str));
+	len = ft_strlen(str);
+	write(1, str, len);
 	free(str);
 	return (len);
 }
 
-int	print_pointer(unsigned long long ptr)
+int	print_unsigned(unsigned int n)
 {
 	char	*str;
 	int		len;
 
-	if (ptr == 0)
-	{
-		len = write(1, "(nil)", 5);
-		return (len);
-	}
-	str = utoa_base(ptr, 16);
+	str = utoa_base((unsigned long long)n, 10);
 	if (!str)
 		return (0);
-	write(1, "0x", 2);
 	len = ft_strlen(str);
 	write(1, str, len);
-	len += 2;
 	free(str);
 	return (len);
 }

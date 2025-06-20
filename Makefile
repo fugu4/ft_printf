@@ -6,13 +6,13 @@
 #    By: hnogi <hnogi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/25 20:36:03 by hnogi             #+#    #+#              #
-#    Updated: 2025/05/25 21:58:17 by hnogi            ###   ########.fr        #
+#    Updated: 2025/06/20 20:57:31 by hnogi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= printf.a
+NAME		= libftprintf.a
 
-SRCS		= ft_printf.c utils.c number.c hex.c itoa.c utoa.c 
+SRCS		= ft_printf.c utils.c number.c hex.c itoa.c utoa.c
 
 OBJS		= $(SRCS:.c=.o)
 
